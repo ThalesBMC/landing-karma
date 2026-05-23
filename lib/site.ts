@@ -5,7 +5,7 @@ export const siteConfig = {
     "Kalma — Panic Attack & Anxiety Relief App | Guided Breathing & Grounding",
   description:
     "Kalma is a panic attack app for iOS with one-tap Panic Shield, offline grounding, box & 4-7-8 breathing, and anxiety journaling. Join the waitlist — launching Q1 2026.",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://kalma.cc",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.kalma.cc",
   author: "Kalma Team",
   twitterHandle: "@kalmaapp",
   keywords: [

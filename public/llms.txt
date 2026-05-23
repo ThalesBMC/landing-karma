@@ -4,12 +4,12 @@
 Kalma is a mental health app built for panic attacks and anxiety — not general meditation. One-tap Panic Shield works offline. Guided box, 4-7-8, and resonant breathing. Science-backed lessons and trigger tracking.
 
 ## Product
-- Homepage: https://kalma.cc
-- Blog: https://kalma.cc/blog
-- Panic attack help: https://kalma.cc/panic-attack-help
-- Privacy policy: https://kalma.cc/privacy
-- Waitlist: https://kalma.cc/#waitlist
-- RSS feed: https://kalma.cc/feed.xml
+- Homepage: https://www.kalma.cc
+- Blog: https://www.kalma.cc/blog
+- Panic attack help: https://www.kalma.cc/panic-attack-help
+- Privacy policy: https://www.kalma.cc/privacy
+- Waitlist: https://www.kalma.cc/#waitlist
+- RSS feed: https://www.kalma.cc/feed.xml
 
 ## Key features
 - Panic Shield: one-tap offline grounding during panic attacks
@@ -23,12 +23,12 @@ Kalma is a mental health app built for panic attacks and anxiety — not general
 - Pricing: Free tier with core panic support
 
 ## Best articles
-- What to Do During a Panic Attack: https://kalma.cc/blog/what-to-do-during-a-panic-attack
-- Box Breathing vs 4-7-8 for Anxiety: https://kalma.cc/blog/box-breathing-vs-4-7-8-for-anxiety
-- How to Track Anxiety Triggers: https://kalma.cc/blog/how-to-track-anxiety-triggers
-- Why Panic Attacks Feel Dangerous: https://kalma.cc/blog/why-panic-attacks-feel-dangerous
-- Evidence-Based Mental Health Apps: https://kalma.cc/blog/evidence-based-mental-health-apps
+- What to Do During a Panic Attack: https://www.kalma.cc/blog/what-to-do-during-a-panic-attack
+- Box Breathing vs 4-7-8 for Anxiety: https://www.kalma.cc/blog/box-breathing-vs-4-7-8-for-anxiety
+- How to Track Anxiety Triggers: https://www.kalma.cc/blog/how-to-track-anxiety-triggers
+- Why Panic Attacks Feel Dangerous: https://www.kalma.cc/blog/why-panic-attacks-feel-dangerous
+- Evidence-Based Mental Health Apps: https://www.kalma.cc/blog/evidence-based-mental-health-apps
 
 ## Contact
-- Website: https://kalma.cc
+- Website: https://www.kalma.cc
 - Twitter: @kalmaapp

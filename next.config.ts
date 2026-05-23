@@ -6,16 +6,6 @@ const nextConfig: NextConfig = {
     contentDispositionType: "attachment",
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
-  async redirects() {
-    return [
-      {
-        source: "/:path*",
-        has: [{ type: "host", value: "www.kalma.cc" }],
-        destination: "https://kalma.cc/:path*",
-        permanent: true,
-      },
-    ];
-  },
   async headers() {
     return [
       {
