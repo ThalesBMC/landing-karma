@@ -1,6 +1,7 @@
 import type { BlogPost } from "./types";
+import { enrichPost } from "./enrich";
 
-export const blogPosts: BlogPost[] = [
+const rawBlogPosts: Omit<BlogPost, "author" | "image">[] = [
   {
     slug: "what-to-do-during-a-panic-attack",
     title: "What to Do During a Panic Attack: A Step-by-Step Guide",
@@ -69,15 +70,20 @@ When your body starts to settle, drink water, eat something small if you can, an
 
 Occasional panic attacks are common, especially during stressful periods. Consider reaching out to a therapist or doctor if attacks are frequent, you are avoiding places or activities because of them, or you are unsure whether symptoms might have a medical cause.
 
-## Having a plan on your phone helps
+## How Kalma approaches this
 
-In the middle of an attack, decision-making is hard. That is why tools like **Kalma's Panic Shield** exist: one tap gives you guided grounding and breathing without login, onboarding, or internet required. Relief should be instant when your mind is not.
+We built Panic Shield because decision-making disappears during an attack. One tap opens guided 5-4-3-2-1 grounding and breathing — no account, no onboarding, and no internet required. That is a product decision, not a marketing line: panic often hits in tunnels, planes, and dead zones.
+
+## Sources
+
+- [NIMH — Panic Disorder](https://www.nimh.nih.gov/health/publications/panic-disorder-when-fear-overwhelms)
+- [APA — Grounding techniques for anxiety](https://www.apa.org/topics/anxiety)
 
 For a deeper look at why panic feels so dangerous even when it is not, read [Why Panic Attacks Feel Dangerous (But Aren't)](/blog/why-panic-attacks-feel-dangerous). And if you want to build a daily practice that lowers your baseline anxiety, explore [How to Track Anxiety Triggers Without Overwhelming Yourself](/blog/how-to-track-anxiety-triggers).
 
 ---
 
-*Kalma is coming to the App Store in Q1 2026. [Join the waitlist](/#waitlist) for early access to Panic Shield, guided breathing, and science-backed anxiety tools, built for the moment you need them most.*
+*Kalma is coming to the App Store in Q1 2026. [Join the waitlist](/#waitlist) for early access to Panic Shield, guided breathing, and science-backed anxiety tools.*
 `,
   },
   {
@@ -160,7 +166,7 @@ Many people keep both in their toolkit, the same way you might choose a light ja
 
 ## Resonant breathing: the third option
 
-If breath holds feel wrong for you, try **resonant breathing** (roughly 5.5 breaths per minute: inhale 5, exhale 5, no holds). Research links this rate to maximum heart-rate variability, a marker of nervous system flexibility. Apps like **Kalma** offer box, 4-7-8, and resonant patterns with visual pacing so you do not have to count under stress.
+If breath holds feel wrong for you, try **resonant breathing** (roughly 5.5 breaths per minute: inhale 5, exhale 5, no holds). Research links this rate to improved heart-rate variability, a marker of nervous system flexibility.
 
 ## How to build a breathing habit
 
@@ -168,6 +174,15 @@ If breath holds feel wrong for you, try **resonant breathing** (roughly 5.5 brea
 2. **Same time, same place**: pair it with an existing habit (after brushing teeth, before lunch)
 3. **Track streaks**: consistency matters more than duration; even 2 minutes daily helps
 4. **Use visual guides**: following a moving circle is easier than counting when anxious
+
+## How Kalma approaches this
+
+We ship box, 4-7-8, and resonant breathing with a visual pacer — not a generic timer — because counting under stress is unreliable. You pick the pattern that fits the moment; the app keeps the rhythm so you can focus on the exhale.
+
+## Sources
+
+- [Cleveland Clinic — Diaphragmatic breathing](https://my.clevelandclinic.org/health/articles/9445-diaphragmatic-breathing)
+- [NIH — Breath regulation and stress](https://www.nih.gov/news-events/nih-research-matters/breath-control-help-mood)
 
 For a full walkthrough of what to do when anxiety spikes suddenly, see [What to Do During a Panic Attack](/blog/what-to-do-during-a-panic-attack). And for nighttime-specific strategies, read [Anxiety at Night: A Gentle Wind-Down Routine](/blog/anxiety-at-night-wind-down-routine).
 
@@ -257,9 +272,14 @@ Tracking is only valuable if it changes something. Here is a simple framework:
 
 Run one experiment at a time. Give it a week before judging results.
 
-## Tools that lower the friction
+## How Kalma approaches this
 
-Pen and paper work perfectly. But when anxiety hits on a commute or in a meeting, you need something faster. **Kalma's journal** is designed for this: quick mood logging, trigger tagging, and weekly insights without the overwhelm of a blank page. Pair it with micro-lessons on anxiety science so you understand *why* patterns emerge, not just *what* they are.
+We designed the journal for 30-second entries — date, intensity, one line of context, one line on what helped. No blank-page pressure. Weekly reviews surface patterns without turning life into a clinical study. That friction reduction is intentional: tracking only works if you actually do it.
+
+## Sources
+
+- [NIMH — Psychotherapies (including CBT)](https://www.nimh.nih.gov/health/topics/psychotherapies)
+- [APA — Keeping a mood diary](https://www.apa.org/topics/mood)
 
 For more on the science behind anxiety tools, read [What "Evidence-Based" Actually Means for Mental Health Apps](/blog/evidence-based-mental-health-apps).
 
@@ -344,6 +364,15 @@ If you have been cleared medically and attacks continue, a therapist specializin
 ## You are not broken
 
 Panic attacks are common: roughly 1 in 3 people experience at least one in their lifetime. They are your nervous system being overprotective, not a character flaw. With the right knowledge and tools, most people significantly reduce their frequency and intensity.
+
+## How Kalma approaches this
+
+Understanding why panic feels dangerous is step one; having a tool ready for step two matters. Panic Shield walks you through grounding and breathing without asking you to remember a checklist mid-attack — and it works offline when you cannot load anything else.
+
+## Sources
+
+- [NIMH — Panic Disorder](https://www.nimh.nih.gov/health/publications/panic-disorder-when-fear-overwhelms)
+- [NIH — Understanding the biology of fear and anxiety](https://www.nih.gov/news-events/nih-research-matters/understanding-biology-fear-anxiety-disorders)
 
 ---
 
@@ -443,9 +472,14 @@ Occasional restless nights are normal. Consider professional support if:
 
 Cognitive behavioral therapy for insomnia (CBT-I) is the gold standard and works well alongside anxiety treatment.
 
-## Building the habit with support
+## How Kalma approaches this
 
-Consistency beats intensity. A 5-minute breathing practice every night for a month will do more than a perfect 60-minute routine you abandon after three days. **Kalma** combines bedtime breathing, sleep soundscapes, and mood tracking so you can see whether your wind-down routine is actually shifting your sleep quality over time.
+We pair bedtime 4-7-8 and resonant breathing with sleep soundscapes and mood tracking so you can see whether your wind-down routine actually shifts sleep quality over weeks — not just on night one. Consistency beats a perfect ritual you abandon after three days.
+
+## Sources
+
+- [NIH — Sleep and anxiety](https://www.nimh.nih.gov/health/publications/sleep-and-mental-health-disorders)
+- [Sleep Foundation — Sleep hygiene](https://www.sleepfoundation.org/sleep-hygiene)
 
 For daytime breathing techniques that complement your nighttime practice, see [Box Breathing vs 4-7-8](/blog/box-breathing-vs-4-7-8-for-anxiety).
 
@@ -543,6 +577,11 @@ Kalma was built with these principles from the start:
 
 We are not claiming to replace therapy. We are building the tool we wished existed: evidence-informed, instant, and respectful of the moment you are in.
 
+## Sources
+
+- [NIMH — Technology and the future of mental health treatment](https://www.nimh.nih.gov/health/topics/technology-and-the-future-of-mental-health-treatment)
+- [APA — App-based mental health tools](https://www.apa.org/topics/technology/mobile-apps)
+
 For practical techniques you can start today, explore [What to Do During a Panic Attack](/blog/what-to-do-during-a-panic-attack) and [How to Track Anxiety Triggers](/blog/how-to-track-anxiety-triggers).
 
 ---
@@ -551,6 +590,8 @@ For practical techniques you can start today, explore [What to Do During a Panic
 `,
   },
 ];
+
+export const blogPosts: BlogPost[] = rawBlogPosts.map(enrichPost);
 
 export function getAllPosts(): BlogPost[] {
   return [...blogPosts].sort(

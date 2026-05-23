@@ -39,10 +39,7 @@ export function Hero() {
           </Reveal>
 
           <Reveal delay={0.08}>
-            <h1
-              id="waitlist"
-              className="text-display scroll-mt-28 mt-6 text-balance text-5xl font-bold text-kalma-deep sm:text-6xl lg:text-[4.25rem]"
-            >
+            <h1 className="text-display mt-6 text-balance text-5xl font-bold text-kalma-deep sm:text-6xl lg:text-[4.25rem]">
               The second panic starts,{" "}
               <span className="gradient-text">Kalma is there</span>.
             </h1>

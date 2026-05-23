@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { BlogPost } from "@/lib/blog/types";
 import { getRelatedPosts } from "@/lib/blog/posts";
 import { BlogContent } from "./BlogContent";
@@ -78,10 +79,20 @@ export function ArticleLayout({ post }: ArticleLayoutProps) {
               <div className="mt-8 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-kalma-muted">
                 <span className="inline-flex items-center gap-2">
                   <span className="flex h-8 w-8 items-center justify-center rounded-full bg-kalma-soft text-xs font-bold text-kalma-action">
-                    K
+                    {post.author.name.charAt(0)}
                   </span>
                   <span>
-                    By <span className="font-medium text-kalma-deep">Kalma Team</span>
+                    By{" "}
+                    <Link
+                      href="/about"
+                      className="font-medium text-kalma-deep transition-colors hover:text-kalma-action"
+                    >
+                      {post.author.name}
+                    </Link>
+                    <span className="hidden sm:inline">
+                      {" "}
+                      · {post.author.role}
+                    </span>
                   </span>
                 </span>
                 <span aria-hidden className="hidden text-kalma-border sm:inline">
@@ -97,7 +108,7 @@ export function ArticleLayout({ post }: ArticleLayoutProps) {
       {/* Body */}
       <div className="mx-auto max-w-3xl px-6 pb-16 pt-10 md:pt-12">
         <Reveal delay={0.05}>
-          <BlogContent content={post.content} />
+          <BlogContent content={post.content} image={post.image} />
         </Reveal>
 
         <Reveal delay={0.1}>

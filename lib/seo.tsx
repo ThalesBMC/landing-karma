@@ -63,6 +63,14 @@ export function buildRootMetadata(): Metadata {
 export function buildArticleMetadata(post: BlogPost): Metadata {
   const title = post.title;
   const url = `/blog/${post.slug}`;
+  const ogImage = post.image
+    ? { url: post.image.src, width: 800, height: 600, alt: post.image.alt }
+    : {
+        url: `/blog/${post.slug}/opengraph-image`,
+        width: 1200,
+        height: 630,
+        alt: post.title,
+      };
 
   return {
     title,
@@ -77,10 +85,10 @@ export function buildArticleMetadata(post: BlogPost): Metadata {
       type: "article",
       url,
       publishedTime: post.date,
-      authors: [siteConfig.author],
+      authors: [post.author.name],
       tags: post.tags,
       siteName: siteConfig.name,
-      images: [{ ...defaultOgImage, alt: post.title }],
+      images: [ogImage],
     },
     twitter: {
       card: "summary_large_image",
@@ -88,7 +96,7 @@ export function buildArticleMetadata(post: BlogPost): Metadata {
       creator: siteConfig.twitterHandle,
       title,
       description: post.description,
-      images: [defaultOgImage.url],
+      images: [ogImage.url],
     },
   };
 }
@@ -200,6 +208,10 @@ export function buildFaqPageJsonLd(items: FaqItem[]) {
 }
 
 export function buildBlogPostingJsonLd(post: BlogPost) {
+  const imageUrl = post.image
+    ? absoluteUrl(post.image.src)
+    : absoluteUrl(defaultOgImage.url);
+
   return {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -208,8 +220,10 @@ export function buildBlogPostingJsonLd(post: BlogPost) {
     datePublished: post.date,
     dateModified: post.date,
     author: {
-      "@type": "Organization",
-      name: siteConfig.author,
+      "@type": "Person",
+      name: post.author.name,
+      jobTitle: post.author.role,
+      description: post.author.bio,
     },
     publisher: {
       "@type": "Organization",
@@ -219,7 +233,7 @@ export function buildBlogPostingJsonLd(post: BlogPost) {
         url: absoluteUrl("/assets/KalmaLogo.png"),
       },
     },
-    image: absoluteUrl(defaultOgImage.url),
+    image: imageUrl,
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": absoluteUrl(`/blog/${post.slug}`),

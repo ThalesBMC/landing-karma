@@ -1,5 +1,7 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Fragment, type ReactNode } from "react";
+import type { BlogPost } from "@/lib/blog/types";
 
 function parseInline(text: string): ReactNode[] {
   const nodes: ReactNode[] = [];
@@ -105,7 +107,13 @@ function parseTable(lines: string[]) {
   );
 }
 
-export function BlogContent({ content }: { content: string }) {
+export function BlogContent({
+  content,
+  image,
+}: {
+  content: string;
+  image?: BlogPost["image"];
+}) {
   const blocks = content.trim().split(/\n\n+/);
   const elements: ReactNode[] = [];
   let i = 0;
@@ -199,6 +207,23 @@ export function BlogContent({ content }: { content: string }) {
 
   return (
     <div className="blog-content">
+      {image && (
+        <figure className="mb-10 overflow-hidden rounded-2xl border border-kalma-border/70 bg-kalma-surface/50">
+          <Image
+            src={image.src}
+            alt={image.alt}
+            width={800}
+            height={600}
+            className="mx-auto h-auto w-full max-w-lg p-8"
+            priority
+          />
+          {image.caption && (
+            <figcaption className="border-t border-kalma-border/60 px-5 py-3 text-center text-sm text-kalma-muted">
+              {image.caption}
+            </figcaption>
+          )}
+        </figure>
+      )}
       {elements.length > 0 && (
         <div className="rounded-2xl border border-kalma-border/70 bg-kalma-surface/50 px-5 py-6 sm:px-8 sm:py-7">
           <div className="text-lg leading-relaxed text-kalma-deep/90 [&_p]:mt-0">

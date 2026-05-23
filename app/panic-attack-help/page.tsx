@@ -4,6 +4,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { CTASection } from "@/components/CTASection";
 import { Reveal } from "@/components/motion/Reveal";
+import { WaitlistTrigger } from "@/components/WaitlistTrigger";
 import {
   JsonLd,
   buildBreadcrumbJsonLd,
@@ -11,26 +12,24 @@ import {
   defaultOgImage,
 } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
-import { getAllPosts } from "@/lib/blog/posts";
+import { getPostBySlug } from "@/lib/blog/posts";
 
 const pageDescription =
-  "Complete guide to panic attack help: grounding techniques, breathing exercises, and why Kalma is built for instant offline relief.";
+  "Kalma Panic Shield: one-tap offline grounding and breathing when a panic attack starts. Read our full step-by-step guide on the blog.";
 
 export const metadata: Metadata = {
-  title: "Panic Attack Help — What to Do & Best Apps",
+  title: "Panic Attack Help — Kalma Panic Shield",
   description: pageDescription,
   keywords: [
     "panic attack help",
-    "what to do during panic attack",
-    "grounding techniques",
     "panic attack app",
-    "5-4-3-2-1 grounding",
+    "offline grounding",
+    "panic shield",
   ],
   alternates: { canonical: "/panic-attack-help" },
   openGraph: {
-    title: "Panic Attack Help | Kalma",
-    description:
-      "Evidence-based panic attack help: grounding, breathing, and the Kalma app for instant offline support.",
+    title: "Panic Attack Help — Kalma Panic Shield",
+    description: pageDescription,
     url: "/panic-attack-help",
     siteName: siteConfig.name,
     images: [defaultOgImage],
@@ -39,52 +38,26 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: siteConfig.twitterHandle,
     creator: siteConfig.twitterHandle,
-    title: "Panic Attack Help | Kalma",
-    description:
-      "Evidence-based panic attack help: grounding, breathing, and instant offline support.",
+    title: "Panic Attack Help — Kalma Panic Shield",
+    description: pageDescription,
     images: [defaultOgImage.url],
   },
 };
 
-const steps = [
-  {
-    title: "Name it",
-    body: "Say aloud: \"This is a panic attack. It feels terrible, but it will pass.\" Naming reduces the fear-of-fear spiral.",
-  },
-  {
-    title: "Ground with 5-4-3-2-1",
-    body: "Notice 5 things you see, 4 you touch, 3 you hear, 2 you smell, 1 you taste. This pulls attention into the present.",
-  },
-  {
-    title: "Slow your breath",
-    body: "Try box breathing (4-4-4-4) or a longer exhale than inhale. Fast breathing feeds panic; slow breathing activates calm.",
-  },
-  {
-    title: "Relax your body",
-    body: "Unclench your jaw, drop your shoulders, loosen your grip. Scan for tension you didn't notice.",
-  },
-  {
-    title: "Avoid the traps",
-    body: "Don't Google symptoms, fight the sensations, or chug caffeine. Acceptance reduces a second layer of suffering.",
-  },
-];
+const guidePost = getPostBySlug("what-to-do-during-a-panic-attack");
+
+const relatedGuides = [
+  guidePost,
+  getPostBySlug("why-panic-attacks-feel-dangerous"),
+  getPostBySlug("box-breathing-vs-4-7-8-for-anxiety"),
+].filter(Boolean);
 
 export default function PanicAttackHelpPage() {
-  const relatedPosts = getAllPosts()
-    .filter((p) =>
-      [
-        "what-to-do-during-a-panic-attack",
-        "why-panic-attacks-feel-dangerous",
-        "box-breathing-vs-4-7-8-for-anxiety",
-      ].includes(p.slug),
-    )
-    .slice(0, 3);
-
   return (
     <>
       <JsonLd
         data={buildWebPageJsonLd({
-          name: "Panic Attack Help",
+          name: "Panic Attack Help — Kalma Panic Shield",
           description: pageDescription,
           path: "/panic-attack-help",
         })}
@@ -102,17 +75,16 @@ export default function PanicAttackHelpPage() {
           <div className="relative mx-auto max-w-3xl px-6">
             <Reveal>
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-kalma-action">
-                Panic attack help
+                Panic Shield
               </p>
               <h1 className="text-display mt-4 text-balance text-4xl font-bold text-kalma-deep sm:text-5xl">
-                What to do during a panic attack
+                Instant panic attack help, offline
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-kalma-muted">
-                Panic attacks peak within minutes and feel dangerous — but they
-                are not life-threatening. This guide covers evidence-based steps
-                you can use anywhere, plus how{" "}
-                <strong className="font-semibold text-kalma-deep">Kalma</strong>{" "}
-                delivers instant offline panic attack help on your phone.
+                When panic hits, you should not need Wi‑Fi, a login screen, or
+                five minutes of onboarding. Kalma&apos;s Panic Shield opens in
+                one tap with guided grounding and breathing — built for the
+                moment decision-making disappears.
               </p>
             </Reveal>
           </div>
@@ -121,59 +93,89 @@ export default function PanicAttackHelpPage() {
         <section className="bg-kalma-surface py-16 md:py-24">
           <div className="mx-auto max-w-3xl px-6">
             <h2 className="text-2xl font-bold text-kalma-deep">
-              Step-by-step panic attack relief
+              What Panic Shield does
             </h2>
-            <ol className="mt-8 space-y-6">
-              {steps.map((step, i) => (
-                <Reveal key={step.title} delay={i * 0.05}>
-                  <li className="rounded-2xl border border-kalma-border/60 bg-white p-6">
-                    <span className="text-sm font-bold text-kalma-action">
-                      Step {i + 1}
-                    </span>
-                    <h3 className="mt-1 text-lg font-semibold text-kalma-deep">
-                      {step.title}
+            <p className="mt-4 leading-relaxed text-kalma-muted">
+              This page is about how Kalma supports you during an attack — not a
+              repeat of general coping steps. For the full evidence-based
+              walkthrough (5-4-3-2-1 grounding, breathing, and what to do
+              after), read our dedicated guide on the blog.
+            </p>
+            <ul className="mt-8 space-y-4">
+              {[
+                {
+                  title: "One tap, no account",
+                  body: "Panic Shield works without signup or onboarding. Open the app and start grounding immediately.",
+                },
+                {
+                  title: "Works offline",
+                  body: "Subways, planes, and dead zones are when panic often strikes. Core tools are stored on your device.",
+                },
+                {
+                  title: "Guided 5-4-3-2-1 + breathing",
+                  body: "Step-by-step grounding and box, 4-7-8, or resonant breathing with a visual pacer — you follow along instead of counting under stress.",
+                },
+                {
+                  title: "Daily practice, not just crisis",
+                  body: "Journal moods and triggers between attacks so patterns become visible before the next spike.",
+                },
+              ].map((item, i) => (
+                <Reveal key={item.title} delay={i * 0.05}>
+                  <li className="list-none rounded-2xl border border-kalma-border/60 bg-white p-6">
+                    <h3 className="text-lg font-semibold text-kalma-deep">
+                      {item.title}
                     </h3>
                     <p className="mt-2 leading-relaxed text-kalma-muted">
-                      {step.body}
+                      {item.body}
                     </p>
                   </li>
                 </Reveal>
               ))}
-            </ol>
+            </ul>
+
+            {guidePost && (
+              <Reveal delay={0.2}>
+                <div className="mt-10 rounded-2xl border border-kalma-action/30 bg-white p-6 md:p-8">
+                  <h3 className="text-lg font-semibold text-kalma-deep">
+                    Need the step-by-step guide?
+                  </h3>
+                  <p className="mt-2 text-kalma-muted">
+                    Our blog article covers what to do during a panic attack in
+                    detail — naming the experience, grounding, breathing, and
+                    when to seek professional help.
+                  </p>
+                  <Link
+                    href={`/blog/${guidePost.slug}`}
+                    className="mt-4 inline-flex items-center gap-2 font-semibold text-kalma-action transition-colors hover:text-kalma-deep"
+                  >
+                    Read: {guidePost.title}
+                    <span aria-hidden>→</span>
+                  </Link>
+                </div>
+              </Reveal>
+            )}
           </div>
         </section>
 
         <section className="bg-white py-16 md:py-24">
-          <div className="mx-auto max-w-3xl px-6">
+          <div className="mx-auto max-w-3xl px-6 text-center">
             <h2 className="text-2xl font-bold text-kalma-deep">
-              Why a panic attack app helps
+              Join the waitlist
             </h2>
-            <p className="mt-4 leading-relaxed text-kalma-muted">
-              During an attack, decision-making shuts down. A dedicated panic
-              attack app like Kalma gives you one-tap access to grounding and
-              breathing — no login, no onboarding, no internet required. Panic
-              Shield is designed for the exact moment anxiety spikes.
+            <p className="mx-auto mt-4 max-w-lg leading-relaxed text-kalma-muted">
+              Kalma launches on the App Store in Q1 2026. Be first to try Panic
+              Shield, guided breathing, and mood tracking.
             </p>
-            <ul className="mt-6 space-y-3 text-kalma-muted">
-              <li className="flex gap-2">
-                <span className="text-kalma-action">✓</span>
-                Offline grounding and 5-4-3-2-1 exercises
-              </li>
-              <li className="flex gap-2">
-                <span className="text-kalma-action">✓</span>
-                Guided box, 4-7-8, and resonant breathing
-              </li>
-              <li className="flex gap-2">
-                <span className="text-kalma-action">✓</span>
-                Mood journal to track triggers over time
-              </li>
-            </ul>
-            <p className="mt-8">
-              <Link
-                href="/#waitlist"
-                className="font-semibold text-kalma-action hover:underline"
-              >
-                Join the Kalma waitlist →
+            <WaitlistTrigger size="md" className="mt-8">
+              Join the waitlist
+            </WaitlistTrigger>
+            <p className="mt-6 text-sm text-kalma-muted">
+              <Link href="/about" className="font-medium text-kalma-action hover:underline">
+                About Kalma
+              </Link>
+              {" · "}
+              <Link href="/blog" className="font-medium text-kalma-action hover:underline">
+                Blog
               </Link>
             </p>
           </div>
@@ -185,21 +187,23 @@ export default function PanicAttackHelpPage() {
               Related guides
             </h2>
             <ul className="mt-6 space-y-4">
-              {relatedPosts.map((post) => (
-                <li key={post.slug}>
-                  <Link
-                    href={`/blog/${post.slug}`}
-                    className="group block rounded-xl border border-kalma-border/60 bg-white p-5 transition-shadow hover:shadow-md"
-                  >
-                    <span className="font-semibold text-kalma-deep group-hover:text-kalma-action">
-                      {post.title}
-                    </span>
-                    <p className="mt-1 text-sm text-kalma-muted">
-                      {post.description}
-                    </p>
-                  </Link>
-                </li>
-              ))}
+              {relatedGuides.map((post) =>
+                post ? (
+                  <li key={post.slug}>
+                    <Link
+                      href={`/blog/${post.slug}`}
+                      className="group block rounded-xl border border-kalma-border/60 bg-white p-5 transition-shadow hover:shadow-md"
+                    >
+                      <span className="font-semibold text-kalma-deep group-hover:text-kalma-action">
+                        {post.title}
+                      </span>
+                      <p className="mt-1 text-sm text-kalma-muted">
+                        {post.description}
+                      </p>
+                    </Link>
+                  </li>
+                ) : null,
+              )}
             </ul>
           </div>
         </section>

@@ -5,43 +5,43 @@ export type FaqItem = {
 
 export const faqItems: FaqItem[] = [
   {
-    question: "What is the best app for panic attacks?",
+    question: "What helps during a panic attack?",
     answer:
-      "Kalma is built specifically for panic attacks with one-tap Panic Shield — instant offline grounding, guided breathing, and reassurance without login or setup. Unlike general meditation apps, Kalma is designed for the moment anxiety spikes.",
+      "Most people find relief by naming what's happening, using a grounding technique like 5-4-3-2-1, and slowing their breathing with a longer exhale than inhale. Panic attacks typically peak within 10 minutes. If attacks are frequent or you avoid places because of them, a therapist can help you build a longer-term plan.",
   },
   {
-    question: "Does Kalma work offline during a panic attack?",
+    question: "Do panic attack apps need internet to work?",
     answer:
-      "Yes. Panic Shield and core grounding tools work fully offline, so you can get relief even without Wi‑Fi or cellular data — when you need help most.",
+      "Not necessarily. Grounding and breathing exercises work offline — and many panic attacks happen when signal is weak or you're in airplane mode. Look for apps that put core relief tools on-device, without requiring login at the moment you need help.",
   },
   {
-    question: "What breathing techniques does Kalma include?",
+    question: "What breathing techniques help with anxiety?",
     answer:
-      "Kalma includes box breathing, 4-7-8, resonant breathing, and other science-backed patterns with visual pacing. Exercises sync with Apple Health and Apple Watch.",
+      "Box breathing (4-4-4-4), 4-7-8 breathing, and resonant breathing (about 5–6 breaths per minute) are among the most studied patterns. The best one is the one you can actually use when your heart is racing — often a simple longer exhale is enough to start.",
   },
   {
     question: "Is Kalma free?",
     answer:
-      "Kalma will offer a free tier with core panic support and breathing tools. Join the waitlist at kalma.cc for launch details and early access pricing.",
+      "Kalma will include a free tier with core panic support and breathing tools. Paid details will be shared at launch. You can join the waitlist at kalma.cc to get early access and pricing updates.",
   },
   {
     question: "When is Kalma launching on the App Store?",
     answer:
-      "Kalma is coming to the iOS App Store in Q1 2026. Join the waitlist to get notified on launch day and receive early access.",
+      "Kalma is planned for the iOS App Store in Q1 2026. Join the waitlist to get notified on launch day.",
   },
   {
     question: "How is Kalma different from Calm or Headspace?",
     answer:
-      "Calm and Headspace focus on daily meditation and sleep. Kalma is purpose-built for panic attacks: one-tap offline grounding, no onboarding friction, mood trigger tracking, and evidence-based micro-lessons for anxiety patterns.",
+      "Calm and Headspace are excellent for daily meditation, sleep, and general wellness. Kalma is built for panic moments: one-tap offline grounding, no onboarding when anxiety spikes, and tools to track triggers over time — not just a library of meditations to browse.",
   },
   {
-    question: "Can Kalma help with anxiety journaling and trigger tracking?",
+    question: "Can journaling help with anxiety triggers?",
     answer:
-      "Yes. Kalma includes mood journaling, trigger tracking, and short science-backed lessons so you can spot patterns and act on insights — not just cope in the moment.",
+      "Yes. Brief mood and trigger logs can reveal patterns — caffeine timing, sleep debt, social situations — that are hard to see in the moment. The key is keeping entries short enough that you'll actually use them after a hard day.",
   },
   {
-    question: "Is Kalma privacy-first?",
+    question: "Is my mental health data safe in anxiety apps?",
     answer:
-      "Kalma is built in the EU with privacy-first design and GDPR-aligned practices. Your mental health data stays yours — we never sell personal information.",
+      "It depends on the app. Check whether data stays on your device, whether you need an account, and whether the company sells data to third parties. Kalma is built in the EU with privacy-first design and GDPR-aligned practices — your journal stays yours.",
   },
 ];

@@ -18,6 +18,7 @@ export function Footer() {
     {
       title: "Company",
       links: [
+        { label: "About", href: "/about" },
         { label: "Mission", href: "#mission" },
         { label: "Panic help", href: "/panic-attack-help" },
         { label: "Blog", href: "/blog" },
@@ -47,7 +48,7 @@ export function Footer() {
           <div className="md:col-span-5">
             <Image
               src="/assets/KalmaLogoLight.png"
-              alt="Kalma"
+              alt="Kalma — panic and anxiety relief app"
               width={840}
               height={392}
               className="h-10 w-auto"

@@ -39,7 +39,7 @@ export function Header() {
         >
           <Image
             src="/assets/KalmaLogo.png"
-            alt="Kalma"
+            alt="Kalma — panic and anxiety relief app"
             width={840}
             height={392}
             priority

@@ -43,15 +43,18 @@ export function WaitlistForm({ variant = "hero", className = "" }: WaitlistFormP
   }
 
   const isHero = variant === "hero";
+  const anchorId = isHero ? "waitlist" : undefined;
+  const wrapperClass = `${isHero ? "scroll-mt-28 " : ""}${className}`.trim();
 
   if (status === "success") {
     return (
       <div
+        id={anchorId}
         className={`flex items-center gap-3 rounded-2xl border px-5 py-4 ${
           isHero
             ? "border-kalma-action/30 bg-kalma-soft text-kalma-deep"
             : "border-white/20 bg-white/10 text-white backdrop-blur"
-        } ${className}`}
+        } ${wrapperClass}`}
         role="status"
       >
         <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full ${
@@ -73,7 +76,7 @@ export function WaitlistForm({ variant = "hero", className = "" }: WaitlistFormP
   const fieldHeight = "h-14 sm:h-[52px]";
 
   return (
-    <div className={className}>
+    <div id={anchorId} className={wrapperClass || undefined}>
       <form
         onSubmit={handleSubmit}
         className={`flex w-full max-w-md flex-col gap-3 sm:flex-row sm:items-stretch sm:gap-2 ${

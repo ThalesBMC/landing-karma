@@ -6,16 +6,16 @@ function focusInput() {
 }
 
 export function focusWaitlistInput() {
-  const title = document.getElementById("waitlist");
+  const anchor = document.getElementById("waitlist");
   const input = document.getElementById("waitlist-email");
 
-  if (!title && !input) {
+  if (!anchor && !input) {
     window.location.assign("/#waitlist");
     return;
   }
 
-  if (title) {
-    title.scrollIntoView({ behavior: "smooth", block: "center" });
+  if (anchor) {
+    anchor.scrollIntoView({ behavior: "smooth", block: "center" });
     window.setTimeout(focusInput, FOCUS_DELAY_MS);
     return;
   }
