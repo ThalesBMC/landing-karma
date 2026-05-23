@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#023047"/>
+      <stop offset="0.5" stop-color="#219EBC"/>
+      <stop offset="1" stop-color="#8ECAE6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="200" cy="500" r="300" fill="#219EBC" opacity="0.15"/>
+  <circle cx="1000" cy="100" r="250" fill="#FFB703" opacity="0.1"/>
+  <text x="600" y="280" text-anchor="middle" font-family="system-ui, sans-serif" font-size="72" font-weight="700" fill="white">Kalma</text>
+  <text x="600" y="350" text-anchor="middle" font-family="system-ui, sans-serif" font-size="28" fill="white" opacity="0.85">Panic and anxiety relief in your pocket</text>
+  <text x="600" y="420" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" fill="white" opacity="0.6">Guided breathing, panic support, mood journaling</text>
+</svg>
