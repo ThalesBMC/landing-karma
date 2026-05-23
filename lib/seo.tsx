@@ -61,7 +61,7 @@ export function buildRootMetadata(): Metadata {
 }
 
 export function buildArticleMetadata(post: BlogPost): Metadata {
-  const title = `${post.title} | Kalma Blog`;
+  const title = post.title;
   const url = `/blog/${post.slug}`;
 
   return {
@@ -94,7 +94,7 @@ export function buildArticleMetadata(post: BlogPost): Metadata {
 }
 
 export function buildBlogIndexMetadata(): Metadata {
-  const title = "Blog | Kalma | Anxiety & Panic Relief Tips";
+  const title = "Blog | Anxiety & Panic Relief Tips";
   const description =
     "Evidence-based articles on panic attacks, breathing exercises, anxiety triggers, and mental wellness from the Kalma team.";
 
